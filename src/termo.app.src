@@ -1,0 +1,21 @@
+{application, termo,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { termo_app, []}},
+  {env, [
+			{termo_gs_runner_module_id, termo_gs_runner_id},
+			{termo_gs_runner_module_name, termo_gs_runner},
+			{termo_gs_log_driver_module_id, termo_gs_log_driver_module_id},
+			{termo_gs_log_driver_module_name, termo_gs_log_driver},
+			{termo_wialon_token, 'f16039bab187c0ef5aaf68cb1f72787668B3EA1BC557A1C8966C97799CEF60BE46AEAB50'},
+      {termo_report_template_name, <<"Termostorage2">>},
+      {termo_default_last_finish_time, null},
+      {termo_default_unit_list, []}
+  		]}
+ ]}.
