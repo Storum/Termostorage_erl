@@ -10,6 +10,7 @@
 %% Application callbacks
 %% ===================================================================
 
+%% test refractoring
 start(_StartType, _StartArgs) ->
 
 	
