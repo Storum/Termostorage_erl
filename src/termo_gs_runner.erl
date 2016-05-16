@@ -216,7 +216,7 @@ check_trasing_data_humid (#unit{} = UnitData, [#tracing{} = Tracing | Tail], Las
 
 check_trasing_data_humid (#unit{} = UnitData, [], LastError) when (UnitData#unit.last_humid_error)#last_humid_error.error =/= LastError ->
     {ok, Msg} = create_sms_message_humid (UnitData#unit.last_humid_error, UnitData#unit.unit_name, (UnitData#unit.unit_params)#unit_params.humid_min, (UnitData#unit.unit_params)#unit_params.humid_max),    
-    %util:send_mail2sms ((UnitData#unit.unit_params)#unit_params.phone_list, Msg),
+    util:send_mail2sms ((UnitData#unit.unit_params)#unit_params.phone_list, Msg),
     io:format("~ts ~n", [Msg]),
     {ok, UnitData};
 
@@ -236,7 +236,7 @@ check_trasing_data_termo (#unit{} = UnitData, [#tracing{} = Tracing | Tail], Las
 
 check_trasing_data_termo (#unit{} = UnitData, [], LastError) when (UnitData#unit.last_termo_error)#last_termo_error.error =/= LastError ->
     {ok, Msg} = create_sms_message_termo (UnitData#unit.last_termo_error, UnitData#unit.unit_name, (UnitData#unit.unit_params)#unit_params.termo_min, (UnitData#unit.unit_params)#unit_params.termo_max),
-    %util:send_mail2sms ((UnitData#unit.unit_params)#unit_params.phone_list, Msg),
+    util:send_mail2sms ((UnitData#unit.unit_params)#unit_params.phone_list, Msg),
     io:format("~ts ~n", [Msg]),
     {ok, UnitData};
 
